@@ -27,5 +27,14 @@ const equiposPorTipo = equipos => {
 console.log(equiposPorTipo(equipos));
 
 const equiposTipoLocalidad = (equipos, tipo, localidad) => equipos.filter(equipo => equipo.tipo.toLowerCase() === tipo && equipo.asignado.provincia.toLowerCase() === localidad).map(empleados => [empleados.asignado.empleado]);
-
 console.log(equiposTipoLocalidad(equipos, "Portátil", "Tarragona"));
+
+const resumenEquipos = equipos => equipos.map(equipo => {
+  const resumenEquipos = {
+    id: equipo.id,
+    poblacion: equipo.asignado.poblacion,
+    provincia: equipo.asignado.provincia
+  };
+  return resumenEquipos;
+});
+console.log(resumenEquipos(equipos));
