@@ -1,5 +1,5 @@
 /* Función1. equiposMayoresEdad */
-const equiposMayoresEdad = (equipos, edad) => equipos.filter(equipo => equipo.asignado.empleado.edad >= edad);
+const equiposMayoresEdad = (equipos, edad) => equipos.filter(equipo => equipo.asignado.empleado.edad >= 30);
 
 /* Función2. equiposProvincia */
 const equiposProvincia = (equipos, provincia) => equipos
@@ -22,7 +22,7 @@ const equiposPorEdad = equipos => equipos.map(puestos => puestos.asignado.emplea
 const equiposTipo = (equipos, tipo) => equipos.filter(equipo => equipo.tipo.toLowerCase() === tipo);
 
 /* Funcion8. trabajadoresTipo */
-const trabajadoresTipo = (trabajadores, tipo) => trabajadores.filter(equipo => equipo.tipo === tipo).map(empleados => [empleados.asignado.empleado]);
+const trabajadoresTipo = (trabajadores, tipo) => trabajadores.filter(equipo => equipo.tipo.toLowerCase() === tipo).map(empleados => [empleados.asignado.empleado]);
 
 /* Funcion9. equiposPorTipo */
 const equiposPorTipo = equipos => {
@@ -44,5 +44,3 @@ const resumenEquipos = equipos => equipos.map(equipo => {
   };
   return resumenEquipos;
 });
-
-
