@@ -1,32 +1,36 @@
-
 /* Función1. equiposMayoresEdad */
 const equiposMayoresEdad = (equipos, edad) => equipos.filter(equipo => equipo.asignado.empleado.edad >= edad);
 
 console.log(equiposMayoresEdad(equipos, 18));
 
-const trabajadoresTipo = (trabajadores, tipo) => trabajadores.filter(equipo => equipo.tipo === tipo).map(empleados => [empleados.asignado.empleado]);
-=======
-/* Funcion puestos */
+/* Función2. equiposProvincia */
+const equiposProvincia = (equipos, provincia) => equipos
+  .filter(equipos => equipos.asignado.provincia.toLowerCase() === provincia.toLowerCase());
+
+console.log(equiposProvincia(equipos, "Tarragona"));
+
+/* Funcion4. puestos */
 const puestos = equipos => equipos.map(puestos => puestos.asignado.empleado.puesto);
 console.log(puestos(equipos));
 
-/* Funcion EdadMedia */
+/* Funcion5. EdadMedia */
 const edadMedia = equipos => equipos.reduce((i, equipo) => i + equipo.asignado.empleado.edad, 0) / equipos.length;
 console.log(edadMedia(equipos, "Portátil"));
 
-/* Funcion equiposPorEdad */
+/* Funcion6. equiposPorEdad */
 const equiposPorEdad = equipos => equipos.map(puestos => puestos.asignado.empleado.edad).sort();
 console.log(equiposPorEdad(equipos));
 
-/* Funcion EquiposTipo */
+/* Funcion7. EquiposTipo */
 const equiposTipo = (equipos, tipo) => equipos.filter(equipo => equipo.tipo.toLowerCase() === tipo);
 console.log(equiposTipo(equipos, "Portátil"));
 
-const trabajadoresTipo = (trabajadores, tipo) => trabajadores.filter(equipo => equipo.tipo.toLowerCase() === tipo).map(empleados => empleados = [empleados.asignado.empleado]);
-
+/* Funcion8. trabajadoresTipo */
+const trabajadoresTipo = (trabajadores, tipo) => trabajadores.filter(equipo => equipo.tipo === tipo).map(empleados => [empleados.asignado.empleado]);
 
 console.log(trabajadoresTipo(equipos, "Portátil"));
 
+/* Funcion9. equiposPorTipo */
 const equiposPorTipo = equipos => {
   const equiposPortatil = ["Portátil", [equipos.filter(equipo => equipo.tipo === "Portátil").map(equipo => [equipo.asignado.empleado])]];
   const equiposSobremesa = ["Sobremesa", [equipos.filter(equipo => equipo.tipo === "Sobremesa").map(equipo => [equipo.asignado.empleado])]];
@@ -35,6 +39,7 @@ const equiposPorTipo = equipos => {
 };
 console.log(equiposPorTipo(equipos));
 
+/* Funcion10. equiposTipoLocalidad */
 const equiposTipoLocalidad = (equipos, tipo, localidad) => equipos.filter(equipo => equipo.tipo.toLowerCase() === tipo && equipo.asignado.provincia.toLowerCase() === localidad).map(empleados => [empleados.asignado.empleado]);
 
 console.log(equiposTipoLocalidad(equipos, "Portátil", "Tarragona"));
