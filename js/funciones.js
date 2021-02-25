@@ -34,3 +34,15 @@ const equiposPorTipo = equipos => {
 
 /* Funcion10. equiposTipoLocalidad */
 const equiposTipoLocalidad = (equipos, tipo, localidad) => equipos.filter(equipo => equipo.tipo.toLowerCase() === tipo && equipo.asignado.provincia.toLowerCase() === localidad).map(empleados => [empleados.asignado.empleado]);
+
+/* Funcion11. resumenEquipos */
+const resumenEquipos = equipos => equipos.map(equipo => {
+  const resumenEquipos = {
+    id: equipo.id,
+    poblacion: equipo.asignado.poblacion,
+    provincia: equipo.asignado.provincia
+  };
+  return resumenEquipos;
+});
+
+
