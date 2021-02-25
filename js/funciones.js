@@ -27,9 +27,16 @@ const trabajadoresTipo = (trabajadores, tipo) => trabajadores.filter(equipo => e
 
 /* Funcion9. equiposPorTipo */
 const equiposPorTipo = equipos => {
-  const equiposPortatil = ["Portátil", [equipos.filter(equipo => equipo.tipo === "Portátil").map(equipo => [equipo.asignado.empleado])]];
-  const equiposSobremesa = ["Sobremesa", [equipos.filter(equipo => equipo.tipo === "Sobremesa").map(equipo => [equipo.asignado.empleado])]];
-  const arrayFinal = [equiposPortatil, equiposSobremesa];
+  const tipos = equipos.map(equipo => equipo.tipo)
+    .filter((equipo, i, equipos) => equipos.indexOf(equipo) === i);
+  const arrayFinal = [];
+  tipos.forEach(tipo => {
+    const elementos = equipos.filter(equipo => equipo.tipo === tipo);
+    arrayFinal.push({
+      tipo,
+      elementos
+    });
+  });
   return arrayFinal;
 };
 
