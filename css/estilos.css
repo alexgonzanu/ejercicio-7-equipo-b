@@ -9,3 +9,13 @@
 .lado {
   background-color: #f1ac7b;
 }
+
+.consola {
+  background-color: #1e1e1e;
+  max-width: 90%;
+  height: 500px;
+}
+
+.consola pre {
+  color: #12822d;
+}
