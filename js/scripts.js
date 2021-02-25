@@ -1,6 +1,6 @@
 const consola = document.querySelector(".consola");
 const pre = document.createElement("pre");
-for (let boton of document.querySelectorAll("button")) {
+for (const boton of document.querySelectorAll("button")) {
   boton.addEventListener("click", e => {
     const nuevoPre = pre.cloneNode();
     if (e.target.classList.contains("gt30")) {
@@ -27,5 +27,5 @@ for (let boton of document.querySelectorAll("button")) {
       nuevoPre.textContent = JSON.stringify(resumenEquipos(equipos), null, 2);
     }
     consola.appendChild(nuevoPre);
-  })
+  });
 }
