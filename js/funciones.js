@@ -7,7 +7,8 @@ const equiposProvincia = (equipos, provincia) => equipos
 
 /* Función3. provincias */
 const provincias = (equipos) => equipos
-  .map(equipo => equipo.asignado.provincia);
+  .map(equipo => equipo.asignado.provincia)
+  .filter((provincia, i, provincias) => provincias.indexOf(provincia) === i);
 
 /* Funcion4. puestos */
 const puestos = equipos => equipos.map(puestos => puestos.asignado.empleado.puesto);
