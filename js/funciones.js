@@ -1,3 +1,11 @@
+
+/* Función1. equiposMayoresEdad */
+const equiposMayoresEdad = (equipos, edad) => equipos.filter(equipo => equipo.asignado.empleado.edad >= edad);
+
+console.log(equiposMayoresEdad(equipos, 18));
+
+const trabajadoresTipo = (trabajadores, tipo) => trabajadores.filter(equipo => equipo.tipo === tipo).map(empleados => [empleados.asignado.empleado]);
+=======
 /* Funcion puestos */
 const puestos = equipos => equipos.map(puestos => puestos.asignado.empleado.puesto);
 console.log(puestos(equipos));
@@ -15,6 +23,7 @@ const equiposTipo = (equipos, tipo) => equipos.filter(equipo => equipo.tipo.toLo
 console.log(equiposTipo(equipos, "Portátil"));
 
 const trabajadoresTipo = (trabajadores, tipo) => trabajadores.filter(equipo => equipo.tipo.toLowerCase() === tipo).map(empleados => empleados = [empleados.asignado.empleado]);
+
 
 console.log(trabajadoresTipo(equipos, "Portátil"));
 
