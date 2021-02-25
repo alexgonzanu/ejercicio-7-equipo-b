@@ -1,3 +1,8 @@
+/* Función1. equiposMayoresEdad */
+const equiposMayoresEdad = (equipos, edad) => equipos.filter(equipo => equipo.asignado.empleado.edad >= edad);
+
+console.log(equiposMayoresEdad(equipos, 18));
+
 const trabajadoresTipo = (trabajadores, tipo) => trabajadores.filter(equipo => equipo.tipo === tipo).map(empleados => [empleados.asignado.empleado]);
 
 console.log(trabajadoresTipo(equipos, "Portátil"));
