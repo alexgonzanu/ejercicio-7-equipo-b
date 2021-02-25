@@ -1,8 +1,12 @@
 const consola = document.querySelector(".consola");
 const pre = document.createElement("pre");
+const limpiaConsola = () => {
+  consola.textContent = "";
+}
 for (let boton of document.querySelectorAll("button")) {
   boton.addEventListener("click", e => {
     const nuevoPre = pre.cloneNode();
+    limpiaConsola();
     if (e.target.classList.contains("gt30")) {
       nuevoPre.textContent = JSON.stringify(equiposMayoresEdad(equipos, 30), null, 2);
     } else if (e.target.classList.contains("tarragona")) {
@@ -27,5 +31,5 @@ for (let boton of document.querySelectorAll("button")) {
       nuevoPre.textContent = JSON.stringify(resumenEquipos(equipos), null, 2);
     }
     consola.appendChild(nuevoPre);
-  })
+  });
 }

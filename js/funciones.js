@@ -1,9 +1,29 @@
+
 /* Función1. equiposMayoresEdad */
 const equiposMayoresEdad = (equipos, edad) => equipos.filter(equipo => equipo.asignado.empleado.edad >= edad);
 
 console.log(equiposMayoresEdad(equipos, 18));
 
 const trabajadoresTipo = (trabajadores, tipo) => trabajadores.filter(equipo => equipo.tipo === tipo).map(empleados => [empleados.asignado.empleado]);
+=======
+/* Funcion puestos */
+const puestos = equipos => equipos.map(puestos => puestos.asignado.empleado.puesto);
+console.log(puestos(equipos));
+
+/* Funcion EdadMedia */
+const edadMedia = equipos => equipos.reduce((i, equipo) => i + equipo.asignado.empleado.edad, 0) / equipos.length;
+console.log(edadMedia(equipos, "Portátil"));
+
+/* Funcion equiposPorEdad */
+const equiposPorEdad = equipos => equipos.map(puestos => puestos.asignado.empleado.edad).sort();
+console.log(equiposPorEdad(equipos));
+
+/* Funcion EquiposTipo */
+const equiposTipo = (equipos, tipo) => equipos.filter(equipo => equipo.tipo.toLowerCase() === tipo);
+console.log(equiposTipo(equipos, "Portátil"));
+
+const trabajadoresTipo = (trabajadores, tipo) => trabajadores.filter(equipo => equipo.tipo.toLowerCase() === tipo).map(empleados => empleados = [empleados.asignado.empleado]);
+
 
 console.log(trabajadoresTipo(equipos, "Portátil"));
 
@@ -15,6 +35,6 @@ const equiposPorTipo = equipos => {
 };
 console.log(equiposPorTipo(equipos));
 
-const equiposTipoLocalidad = (equipos, tipo, localidad) => equipos.filter(equipo => equipo.tipo === tipo && equipo.asignado.provincia === localidad).map(empleados => [empleados.asignado.empleado]);
+const equiposTipoLocalidad = (equipos, tipo, localidad) => equipos.filter(equipo => equipo.tipo.toLowerCase() === tipo && equipo.asignado.provincia.toLowerCase() === localidad).map(empleados => [empleados.asignado.empleado]);
 
 console.log(equiposTipoLocalidad(equipos, "Portátil", "Tarragona"));
